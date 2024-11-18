@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'polls/css/style.css' %}">
+
+<h3>{{ question.question_text }}</h3>
+<small>{{ question.pub_date }}</small>
+<img style="display: block;" width="200px" height="auto" src="{% static 'polls/img/test.png' %}" alt="">
+
+<ul>
+    {% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} - {{ choice.votes }}</li>
+    {% endfor %}
+</ul>
